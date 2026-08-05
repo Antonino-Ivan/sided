@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/**
+ * Il design system è diviso per responsabilità. L'ordine conta: i token
+ * definiscono le variabili, base normalizza, ui fornisce le primitive e i
+ * file successivi possono sovrascriverle.
+ */
+@import "../styles/tokens.css";
+@import "../styles/base.css";
+@import "../styles/ui.css";
+@import "../styles/shell.css";
+@import "../styles/choice.css";
+@import "../styles/discussion.css";
+@import "../styles/screens.css";
+@import "../styles/motion.css";
