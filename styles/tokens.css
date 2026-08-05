@@ -1,0 +1,137 @@
+/**
+ * Token del design system Sided.
+ *
+ * Ogni colore, spazio, raggio e curva usati altrove nasce qui. Il vecchio
+ * `globals.css` ripeteva gli stessi valori a mano in quattromila righe: con i
+ * token un ritocco al brand è una riga sola.
+ */
+
+:root {
+  /* Marchio ------------------------------------------------------------- */
+  --brand: #08bfe8;
+  --brand-strong: #0396bb;
+  --brand-deep: #00647f;
+  --brand-soft: #e6f9ff;
+
+  --accent: #f62b8a;
+  --accent-strong: #d3146d;
+  --accent-deep: #96094b;
+  --accent-soft: #ffeff6;
+
+  /* Accenti degli avatar ------------------------------------------------ */
+  --accent-cyan: #08bfe8;
+  --accent-pink: #f62b8a;
+  --accent-violet: #7c5cff;
+  --accent-mint: #12b981;
+  --accent-amber: #f59f0b;
+  --accent-blue: #3b7dff;
+
+  /* Superfici ----------------------------------------------------------- */
+  --page: #eef1f6;
+  --surface: #ffffff;
+  --surface-2: #f6f7fb;
+  --surface-3: #eceef5;
+  --surface-inset: #f1f3f9;
+  --border: #e2e5ee;
+  --border-strong: #cfd4e2;
+
+  /* Testo --------------------------------------------------------------- */
+  --ink: #14161d;
+  --ink-2: #3d4351;
+  --muted: #6b7280;
+  --on-brand: #ffffff;
+
+  --danger: #e5484d;
+  --success: #12b981;
+
+  /* Ombre --------------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06), 0 2px 6px rgb(15 23 42 / 0.04);
+  --shadow-md: 0 4px 12px rgb(15 23 42 / 0.07), 0 12px 28px rgb(15 23 42 / 0.06);
+  --shadow-lg: 0 12px 32px rgb(15 23 42 / 0.1), 0 32px 64px rgb(15 23 42 / 0.09);
+  --shadow-brand: 0 10px 30px rgb(8 191 232 / 0.28);
+
+  /* Raggi --------------------------------------------------------------- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --r-full: 999px;
+
+  /* Spazi (scala 4) ----------------------------------------------------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+
+  /* Tipografia ---------------------------------------------------------- */
+  --font: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  --t-xs: 11px;
+  --t-sm: 12.5px;
+  --t-base: 14.5px;
+  --t-md: 16px;
+  --t-lg: 19px;
+  --t-xl: 24px;
+  --t-2xl: 32px;
+  --t-display: clamp(52px, 6.4vw, 96px);
+
+  /* Motion -------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --t-press: 100ms;
+  --t-fast: 160ms;
+  --t-state: 220ms;
+  --t-enter: 280ms;
+
+  /* Layout -------------------------------------------------------------- */
+  --frame-width: 452px;
+  --frame-radius: 34px;
+  --topbar-height: 58px;
+  --nav-height: 68px;
+}
+
+:root[data-theme="dark"] {
+  --brand: #45dcf5;
+  --brand-strong: #7ce8fa;
+  --brand-deep: #a8f0fc;
+  --brand-soft: #0e2f38;
+
+  --accent: #ff5da9;
+  --accent-strong: #ff8cc4;
+  --accent-deep: #ffb3d8;
+  --accent-soft: #38182c;
+
+  --accent-cyan: #45dcf5;
+  --accent-pink: #ff5da9;
+  --accent-violet: #9b83ff;
+  --accent-mint: #34d3a0;
+  --accent-amber: #fbbf3f;
+  --accent-blue: #6b9dff;
+
+  --page: #0a0b10;
+  --surface: #15161e;
+  --surface-2: #1c1e28;
+  --surface-3: #242734;
+  --surface-inset: #101119;
+  --border: #2b2e3c;
+  --border-strong: #3c4053;
+
+  --ink: #f2f3f8;
+  --ink-2: #c3c7d4;
+  --muted: #8f95a6;
+  --on-brand: #06222a;
+
+  --danger: #ff6369;
+  --success: #34d3a0;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 6px 18px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 18px 48px rgb(0 0 0 / 0.55);
+  --shadow-brand: 0 10px 30px rgb(69 220 245 / 0.2);
+}

@@ -1,0 +1,144 @@
+/**
+ * Sistema di movimento.
+ *
+ * Regola: l'animazione non deve mai ritardare un'interazione. Le comparse
+ * partono già "quasi" a posto e ogni transizione sparisce del tutto con
+ * `prefers-reduced-motion`.
+ */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes nudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+
+/* Comparsa progressiva degli elementi in lista --------------------------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--t-enter) var(--ease-out),
+    transform var(--t-enter) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Transizioni del mazzo di card ------------------------------------------ */
+
+.choice-card {
+  --deck-duration: 220ms;
+}
+
+.choice-card.is-leaving-up,
+.choice-card.is-leaving-down,
+.choice-card.is-entering-from-bottom,
+.choice-card.is-entering-from-top {
+  transition:
+    transform var(--deck-duration) var(--ease-in-out),
+    opacity var(--deck-duration) var(--ease-in-out);
+}
+
+.choice-card.is-leaving-up {
+  transform: translate3d(0, -46%, 0) scale(0.94);
+  opacity: 0;
+}
+
+.choice-card.is-leaving-down {
+  transform: translate3d(0, 46%, 0) scale(0.94);
+  opacity: 0;
+}
+
+.choice-card.is-entering-from-bottom {
+  animation: deck-enter-up var(--t-enter) var(--ease-spring) both;
+}
+
+.choice-card.is-entering-from-top {
+  animation: deck-enter-down var(--t-enter) var(--ease-spring) both;
+}
+
+@keyframes deck-enter-up {
+  from {
+    transform: translate3d(0, 34%, 0) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes deck-enter-down {
+  from {
+    transform: translate3d(0, -34%, 0) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Nessun movimento ------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
