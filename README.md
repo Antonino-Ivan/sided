@@ -173,3 +173,7 @@ riservate alla piattaforma e non vanno implementate qui.
 
 `HANDOFF.md` descrive lo stato del prototipo *precedente* a questa riscrittura:
 va letto come documento storico, non come descrizione del codice attuale.
+
+## Licenza
+
+MIT — vedi [LICENSE](LICENSE).
